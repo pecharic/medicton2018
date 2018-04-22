@@ -2,9 +2,11 @@ import * as React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-
-export class SignIn extends React.Component<{}, {}>{
-    constructor(props:any){
+interface SignInProps {
+    changeMode(visible: false):any;
+}
+export class SignIn extends React.Component<SignInProps, {}>{
+    constructor(props:SignInProps){
         super(props);
     }
     render() {
@@ -28,6 +30,7 @@ export class SignIn extends React.Component<{}, {}>{
                 />
                 <br/>
                 <RaisedButton label="Přihlásit se" primary={true} /*onClick={this.handleSubmit.bind(this)}*/     />
+                <RaisedButton label="Registrovat se" onClick={this.props.changeMode(false)}     />
             </div>
         )
             ;
