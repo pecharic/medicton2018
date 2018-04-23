@@ -8,7 +8,7 @@ export class HomeStore {
         this.visible = n;
     }
 
-    //@computed public get total(){return this.name+"jhhdgr";}
+
 }
 
 const homeStore = new HomeStore();

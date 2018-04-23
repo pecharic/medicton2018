@@ -1,13 +1,18 @@
+import {LocalStorage} from "../localStorage/localStorage";
+import { IToken } from '../types/type';
 
 export class FetchProvider  {
 
     static BaseUrl = 'http://localhost:8088/medicton';
-    // static BaseUrl = '.';
     private token: string;
-
+    private localStorage:LocalStorage;
     lastResponse: Response;
 
-
+    constructor( ) {
+        this.localStorage=new LocalStorage();
+        const tempToken = this.localStorage.getItem<IToken>('sessionInfo');
+        this.token = tempToken ? tempToken.Token : '';
+    }
     requestGet<T>(url: string): Promise<T> {
         const headers = this.constructHeader();
         headers.set("Content-Type", "text/plain");
@@ -100,3 +105,4 @@ export class FetchProvider  {
         return headers;
     }
 }
+

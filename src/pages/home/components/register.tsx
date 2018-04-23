@@ -14,12 +14,15 @@ export class Register extends React.Component<SignInProps, {}> {
     render() {
         return (
             <div>
+                <h2>Registrovat se</h2>
+                <div style={{ fontSize:'0.7em', color: '#0061ff',cursor: 'pointer'}} onClick={this.props.changeMode(true)}>Přihlásit se</div>
 
                 <TextField
                     hintText="Jmeno"
                     floatingLabelText="Jmeno"
                     type="text"
                     name="Username"
+                    style={{width:'100%'}}
                     //onChange={this.handleChange.bind(this)}
                 />
                 <br/>
@@ -28,18 +31,21 @@ export class Register extends React.Component<SignInProps, {}> {
                     floatingLabelText="E-mail"
                     type="text"
                     name="Username"
+                    style={{width:'100%'}}
                     //onChange={this.handleChange.bind(this)}
                 />
+                <br/>
                 <TextField
                     hintText="Telefon"
                     floatingLabelText="Telefon"
                     type="text"
                     name="Username"
+                    style={{width:'100%'}}
                     //onChange={this.handleChange.bind(this)}
                 />
                 <br/>
-                <RaisedButton label="Registrovat se" primary={true} /*onClick={this.handleSubmit.bind(this)}*/     />
-                <RaisedButton label="Chci se prihlasit mam ucet" onClick={this.props.changeMode(true)}/>
+                <RaisedButton style={{marginTop:'20px', width:'100%'}} label="Registrovat se" primary={true} /*onClick={this.handleSubmit.bind(this)}*/     />
+
             </div>
         )
             ;
