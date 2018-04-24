@@ -1,0 +1,11 @@
+
+  .link {
+    font-size: 15px;
+    line-height: 25px;
+    color: #637282;
+    text-decoration:none;
+  }
+  .link:hover{
+    color:#0070e0;
+  }
+
